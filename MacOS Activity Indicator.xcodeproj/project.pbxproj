@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3319A9EE1E085437005DB79C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3319A9EC1E085437005DB79C /* LICENSE */; };
+		3319A9EF1E085437005DB79C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3319A9ED1E085437005DB79C /* README.md */; };
 		336F747B1E07EC92009BCC1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F747A1E07EC92009BCC1B /* main.m */; };
 		336F747D1E07EC92009BCC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F747C1E07EC92009BCC1B /* Assets.xcassets */; };
 		336F74801E07EC92009BCC1B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336F747E1E07EC92009BCC1B /* MainMenu.xib */; };
 		336F748B1E07ECA4009BCC1B /* switchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74871E07ECA4009BCC1B /* switchIcon.png */; };
 		336F748C1E07ECA4009BCC1B /* switchIconinv.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74881E07ECA4009BCC1B /* switchIconinv.png */; };
-		336F748D1E07ECA4009BCC1B /* switchicon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74891E07ECA4009BCC1B /* switchicon2x.png */; };
-		336F748E1E07ECA4009BCC1B /* switchIconinv2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F748A1E07ECA4009BCC1B /* switchIconinv2x.png */; };
 		336F74911E07ECB8009BCC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F74901E07ECB8009BCC1B /* AppDelegate.m */; };
 		336F74941E07ECC8009BCC1B /* switchicon.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 336F74921E07ECC8009BCC1B /* switchicon.idraw */; };
 		336F74951E07ECC8009BCC1B /* switchicon2xApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74931E07ECC8009BCC1B /* switchicon2xApp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3319A9EC1E085437005DB79C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		3319A9ED1E085437005DB79C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		336F74731E07EC92009BCC1B /* MacOS Activity Indicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacOS Activity Indicator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		336F747A1E07EC92009BCC1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		336F747C1E07EC92009BCC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,8 +29,6 @@
 		336F74811E07EC92009BCC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336F74871E07ECA4009BCC1B /* switchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIcon.png; sourceTree = "<group>"; };
 		336F74881E07ECA4009BCC1B /* switchIconinv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIconinv.png; sourceTree = "<group>"; };
-		336F74891E07ECA4009BCC1B /* switchicon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchicon2x.png; sourceTree = "<group>"; };
-		336F748A1E07ECA4009BCC1B /* switchIconinv2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIconinv2x.png; sourceTree = "<group>"; };
 		336F748F1E07ECB8009BCC1B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		336F74901E07ECB8009BCC1B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		336F74921E07ECC8009BCC1B /* switchicon.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = switchicon.idraw; sourceTree = "<group>"; };
@@ -69,8 +69,6 @@
 				336F74931E07ECC8009BCC1B /* switchicon2xApp.png */,
 				336F74871E07ECA4009BCC1B /* switchIcon.png */,
 				336F74881E07ECA4009BCC1B /* switchIconinv.png */,
-				336F74891E07ECA4009BCC1B /* switchicon2x.png */,
-				336F748A1E07ECA4009BCC1B /* switchIconinv2x.png */,
 				336F748F1E07ECB8009BCC1B /* AppDelegate.h */,
 				336F74901E07ECB8009BCC1B /* AppDelegate.m */,
 				336F747C1E07EC92009BCC1B /* Assets.xcassets */,
@@ -84,6 +82,8 @@
 		336F74791E07EC92009BCC1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3319A9EC1E085437005DB79C /* LICENSE */,
+				3319A9ED1E085437005DB79C /* README.md */,
 				336F747A1E07EC92009BCC1B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -120,6 +120,7 @@
 				TargetAttributes = {
 					336F74721E07EC92009BCC1B = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = KAX983KY52;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -147,14 +148,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				336F748E1E07ECA4009BCC1B /* switchIconinv2x.png in Resources */,
 				336F748C1E07ECA4009BCC1B /* switchIconinv.png in Resources */,
 				336F74941E07ECC8009BCC1B /* switchicon.idraw in Resources */,
 				336F747D1E07EC92009BCC1B /* Assets.xcassets in Resources */,
+				3319A9EE1E085437005DB79C /* LICENSE in Resources */,
 				336F74951E07ECC8009BCC1B /* switchicon2xApp.png in Resources */,
 				336F748B1E07ECA4009BCC1B /* switchIcon.png in Resources */,
 				336F74801E07EC92009BCC1B /* MainMenu.xib in Resources */,
-				336F748D1E07ECA4009BCC1B /* switchicon2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3319A9EF1E085437005DB79C /* README.md in Sources */,
 				336F74911E07ECB8009BCC1B /* AppDelegate.m in Sources */,
 				336F747B1E07EC92009BCC1B /* main.m in Sources */,
 			);
@@ -275,7 +276,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KAX983KY52;
 				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.milgra.MacOS-Activity-Indicator";
@@ -287,7 +290,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KAX983KY52;
 				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.milgra.MacOS-Activity-Indicator";
@@ -314,6 +319,7 @@
 				336F74861E07EC92009BCC1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

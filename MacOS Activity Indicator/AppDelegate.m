@@ -46,9 +46,7 @@
         [_statusItem setHighlightMode : NO ];
         [_statusItem setToolTip : @"MacOS File Activity Indicator" ];
         [_statusItem setAction : @selector(itemClicked:) ];
-
-        if ( [ [ NSScreen mainScreen ] backingScaleFactor ] == 1.0 ) [_statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
-        else _statusItem.image = [NSImage imageNamed:@"switchIcon2x.png"];
+        [_statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
         [_statusItem.image setTemplate:NO];
         
         callbackCtx.version			= 0;
@@ -96,13 +94,11 @@
         flag = 1 - flag;
         if ( flag == 1 )
         {
-            if ( [ [ NSScreen mainScreen ] backingScaleFactor ] == 1.0 ) [_statusItem setImage : [NSImage imageNamed:@"switchIconinv.png"] ];
-            else _statusItem.image = [NSImage imageNamed:@"switchIconinv2x.png"];
+            [_statusItem setImage : [NSImage imageNamed:@"switchIconinv.png"] ];
         }
         else
         {
-            if ( [ [ NSScreen mainScreen ] backingScaleFactor ] == 1.0 ) [_statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
-            else _statusItem.image = [NSImage imageNamed:@"switchIcon2x.png"];
+            [_statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
         }
     }
 
