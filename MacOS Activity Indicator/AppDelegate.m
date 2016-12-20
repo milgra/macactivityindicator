@@ -9,6 +9,7 @@
         NSTextView *textview;
         NSScrollView *scrollview;
         NSMutableArray* logs;
+        NSStatusItem* statusItem;
     }
 
     @end
@@ -42,12 +43,12 @@
         logs = [ [ NSMutableArray alloc ] init ];
         flag = 0;
 
-        self.statusItem = [ [ NSStatusBar systemStatusBar ] statusItemWithLength : NSVariableStatusItemLength ];
-        [_statusItem setHighlightMode : NO ];
-        [_statusItem setToolTip : @"MacOS File Activity Indicator" ];
-        [_statusItem setAction : @selector(itemClicked:) ];
-        [_statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
-        [_statusItem.image setTemplate:NO];
+        statusItem = [ [ NSStatusBar systemStatusBar ] statusItemWithLength : NSVariableStatusItemLength ];
+        [statusItem setHighlightMode : NO ];
+        [statusItem setToolTip : @"MacOS File Activity Indicator" ];
+        [statusItem setAction : @selector(itemClicked:) ];
+        [statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
+        [statusItem.image setTemplate:NO];
         
         callbackCtx.version			= 0;
         callbackCtx.info			= (__bridge void *)self;
@@ -75,7 +76,6 @@
             [NSException raise:@"CDEventsEventStreamCreationFailureException"
                         format:@"Failed to create event stream."];
         }
-        
     }
 
     - ( void ) addLog : ( NSString* ) string
@@ -94,28 +94,25 @@
         flag = 1 - flag;
         if ( flag == 1 )
         {
-            [_statusItem setImage : [NSImage imageNamed:@"switchIconinv.png"] ];
+            [statusItem setImage : [NSImage imageNamed:@"switchIconinv.png"] ];
         }
         else
         {
-            [_statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
+            [statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
         }
     }
 
     - ( void ) windowWillClose:(NSNotification *)notification
     {
-        [textview release];
-        [scrollview release];
-        
         window = nil;
         textview = nil;
         scrollview = nil;
     }
 
-    - (BOOL)windowShouldClose:(id)sender
+    - ( BOOL ) windowShouldClose:(id)sender
     {
-        [NSApp terminate:self];
-        return NO;
+        [ NSApp terminate : nil ];
+        return YES;
     }
 
     - (void)itemClicked:(id)sender
@@ -161,6 +158,7 @@
             
             [scrollview setDocumentView:textview];
 
+            [ window setTitle:@"Activity Indicator - Files"];
             [ window setLevel : NSNormalWindowLevel ];
             [ window setDelegate : self ];
             [ window setHasShadow : YES ];
@@ -171,6 +169,8 @@
             [ window makeKeyAndOrderFront : self ];
             [ window makeFirstResponder : scrollview ];
             [ window makeMainWindow ];
+            
+            [NSApp activateIgnoringOtherApps:YES];
 
             [ [ [ textview textStorage ] mutableString ] setString:[logs componentsJoinedByString: @"\n" ] ];
             [textview setTextColor:[NSColor greenColor]];

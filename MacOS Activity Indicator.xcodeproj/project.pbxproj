@@ -15,8 +15,6 @@
 		336F748B1E07ECA4009BCC1B /* switchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74871E07ECA4009BCC1B /* switchIcon.png */; };
 		336F748C1E07ECA4009BCC1B /* switchIconinv.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74881E07ECA4009BCC1B /* switchIconinv.png */; };
 		336F74911E07ECB8009BCC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F74901E07ECB8009BCC1B /* AppDelegate.m */; };
-		336F74941E07ECC8009BCC1B /* switchicon.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 336F74921E07ECC8009BCC1B /* switchicon.idraw */; };
-		336F74951E07ECC8009BCC1B /* switchicon2xApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74931E07ECC8009BCC1B /* switchicon2xApp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +29,6 @@
 		336F74881E07ECA4009BCC1B /* switchIconinv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIconinv.png; sourceTree = "<group>"; };
 		336F748F1E07ECB8009BCC1B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		336F74901E07ECB8009BCC1B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		336F74921E07ECC8009BCC1B /* switchicon.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = switchicon.idraw; sourceTree = "<group>"; };
-		336F74931E07ECC8009BCC1B /* switchicon2xApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchicon2xApp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +61,6 @@
 		336F74751E07EC92009BCC1B /* MacOS Activity Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				336F74921E07ECC8009BCC1B /* switchicon.idraw */,
-				336F74931E07ECC8009BCC1B /* switchicon2xApp.png */,
 				336F74871E07ECA4009BCC1B /* switchIcon.png */,
 				336F74881E07ECA4009BCC1B /* switchIconinv.png */,
 				336F748F1E07ECB8009BCC1B /* AppDelegate.h */,
@@ -120,8 +114,12 @@
 				TargetAttributes = {
 					336F74721E07EC92009BCC1B = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = KAX983KY52;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -149,10 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				336F748C1E07ECA4009BCC1B /* switchIconinv.png in Resources */,
-				336F74941E07ECC8009BCC1B /* switchicon.idraw in Resources */,
 				336F747D1E07EC92009BCC1B /* Assets.xcassets in Resources */,
 				3319A9EE1E085437005DB79C /* LICENSE in Resources */,
-				336F74951E07ECC8009BCC1B /* switchicon2xApp.png in Resources */,
 				336F748B1E07ECA4009BCC1B /* switchIcon.png in Resources */,
 				336F74801E07EC92009BCC1B /* MainMenu.xib in Resources */,
 			);
@@ -193,7 +189,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -240,7 +236,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -276,12 +272,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KAX983KY52;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.milgra.MacOS-Activity-Indicator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.milgra.activityindicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -290,12 +287,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KAX983KY52;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.milgra.MacOS-Activity-Indicator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.milgra.activityindicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
