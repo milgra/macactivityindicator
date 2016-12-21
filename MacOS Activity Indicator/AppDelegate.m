@@ -43,7 +43,7 @@
         logs = [ [ NSMutableArray alloc ] init ];
         flag = 0;
 
-        statusItem = [ [ NSStatusBar systemStatusBar ] statusItemWithLength : NSVariableStatusItemLength ];
+        statusItem = [ [ [ NSStatusBar systemStatusBar ] statusItemWithLength : NSVariableStatusItemLength ] retain ];
         [statusItem setHighlightMode : NO ];
         [statusItem setToolTip : @"MacOS File Activity Indicator" ];
         [statusItem setAction : @selector(itemClicked:) ];
@@ -56,7 +56,7 @@
         callbackCtx.release			= NULL;
         callbackCtx.copyDescription	= NULL;
 
-        NSArray *watchedPaths = [ NSArray arrayWithObject : [ NSString stringWithCString: "/" encoding:NSUTF8StringEncoding ] ];
+        NSArray *watchedPaths = [ [ NSArray arrayWithObject : [ NSString stringWithCString: "/" encoding:NSUTF8StringEncoding ] ] retain ];
         FSEventStreamCreateFlags creationFlags = kFSEventStreamCreateFlagUseCFTypes | kFSEventStreamCreateFlagWatchRoot | kFSEventStreamCreateFlagIgnoreSelf | kFSEventStreamCreateFlagFileEvents;
         
         _eventStream = FSEventStreamCreate(kCFAllocatorDefault,
