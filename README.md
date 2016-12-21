@@ -1,4 +1,4 @@
-# macos_activity_indicator
+# MacOS Activity Indicator
 
 MacOS Activity Indicator
 
