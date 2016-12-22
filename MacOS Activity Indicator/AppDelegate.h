@@ -9,3 +9,7 @@
     @interface MyWindow : NSWindow
     
     @end
+
+    @interface MyTextView : NSTextView
+    
+    @end

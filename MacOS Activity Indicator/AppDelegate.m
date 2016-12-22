@@ -10,6 +10,9 @@
         NSScrollView *scrollview;
         NSMutableArray* logs;
         NSStatusItem* statusItem;
+        NSString* imageName;
+        NSDate* lastLog;
+        BOOL isLit;
     }
 
     @end
@@ -28,7 +31,7 @@
     {
         AppDelegate * delegate		= (__bridge AppDelegate *)callbackCtxInfo;
         NSArray *eventPathsArray	= (__bridge NSArray *)eventPaths;
-
+        
         for (NSUInteger i = 0; i < numEvents; ++i)
         {
             NSString* path = [eventPathsArray objectAtIndex:i];
@@ -42,6 +45,7 @@
 
         logs = [ [ NSMutableArray alloc ] init ];
         flag = 0;
+        isLit = NO;
 
         statusItem = [ [ [ NSStatusBar systemStatusBar ] statusItemWithLength : NSVariableStatusItemLength ] retain ];
         [statusItem setHighlightMode : NO ];
@@ -56,7 +60,7 @@
         callbackCtx.release			= NULL;
         callbackCtx.copyDescription	= NULL;
 
-        NSArray *watchedPaths = [ [ NSArray arrayWithObject : [ NSString stringWithCString: "/" encoding:NSUTF8StringEncoding ] ] retain ];
+        NSArray *watchedPaths = [ NSArray arrayWithObject : [ NSString stringWithCString: "/" encoding:NSUTF8StringEncoding ] ];
         FSEventStreamCreateFlags creationFlags = kFSEventStreamCreateFlagUseCFTypes | kFSEventStreamCreateFlagWatchRoot | kFSEventStreamCreateFlagIgnoreSelf | kFSEventStreamCreateFlagFileEvents;
         
         _eventStream = FSEventStreamCreate(kCFAllocatorDefault,
@@ -64,7 +68,7 @@
                                            &callbackCtx,
                                            (__bridge CFArrayRef)watchedPaths,
                                            kFSEventStreamEventIdSinceNow,
-                                           (NSTimeInterval)3.0,
+                                           (NSTimeInterval)1.0,
                                            (uint) creationFlags);
 
         FSEventStreamScheduleWithRunLoop(_eventStream,
@@ -76,6 +80,16 @@
             [NSException raise:@"CDEventsEventStreamCreationFailureException"
                         format:@"Failed to create event stream."];
         }
+        
+        [ NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(NSTimer* timer)
+        {
+            if ( isLit && [lastLog timeIntervalSinceNow] < -1.0 )
+            {
+                isLit = NO;
+                imageName = @"switchIconinv.png";
+                [self performSelectorOnMainThread:@selector(setImage) withObject:nil waitUntilDone:NO];
+            }
+        }];
     }
 
     - ( void ) addLog : ( NSString* ) string
@@ -91,15 +105,20 @@
             [textview setFont:[NSFont fontWithName:@"Courier New" size:13]];
         }
         
-        flag = 1 - flag;
-        if ( flag == 1 )
+        [ lastLog release ];
+        lastLog = [ [ NSDate alloc ] init ];
+        
+        if ( !isLit )
         {
-            [statusItem setImage : [NSImage imageNamed:@"switchIconinv.png"] ];
+            isLit = YES;
+            imageName = @"switchIcon.png";
+            [self performSelectorOnMainThread:@selector(setImage) withObject:nil waitUntilDone:NO];
         }
-        else
-        {
-            [statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
-        }
+    }
+
+    - ( void ) setImage
+    {
+        [statusItem setImage : [NSImage imageNamed:imageName] ];
     }
 
     - ( void ) windowWillClose:(NSNotification *)notification
@@ -145,7 +164,7 @@
             
             NSSize contentSize = [ scrollview contentSize ];
 
-            textview = [[NSTextView alloc] initWithFrame:NSMakeRect(0, 0, contentSize.width, contentSize.height)];
+            textview = [[MyTextView alloc] initWithFrame:NSMakeRect(0, 0, contentSize.width, contentSize.height)];
             [textview setMinSize:NSMakeSize(0.0, contentSize.height)];
             [textview setMaxSize:NSMakeSize(FLT_MAX, FLT_MAX)];
             [textview setVerticallyResizable:YES];
@@ -167,7 +186,7 @@
             [ window setMinSize: NSMakeSize( 200, 300 ) ];
                 
             [ window makeKeyAndOrderFront : self ];
-            [ window makeFirstResponder : scrollview ];
+            [ window makeFirstResponder : textview ];
             [ window makeMainWindow ];
             
             [NSApp activateIgnoringOtherApps:YES];
@@ -176,7 +195,6 @@
             [textview setTextColor:[NSColor greenColor]];
             [textview setBackgroundColor:[NSColor blackColor]];
             [textview setFont:[NSFont fontWithName:@"Courier New" size:13]];
-
         }
         else
         {
@@ -193,5 +211,20 @@
 
     - ( BOOL ) canBecomeKeyWindow {	return YES; }
     - ( BOOL ) canBecomeMainWindow { return YES; }
+
+    @end
+
+    @implementation MyTextView
+
+    - ( void ) mouseDown:(NSEvent *)event
+    {
+        if ( [self selectedRange].length == 0 )
+        {
+            [self selectAll:self];
+            [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:nil];
+            [[NSPasteboard generalPasteboard] setString:[[self textStorage] mutableString] forType:NSStringPboardType];
+        }
+        else [self setSelectedRange: NSMakeRange(0, 0)];
+    }
 
     @end
