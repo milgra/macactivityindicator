@@ -1,5 +1,12 @@
 # MacOS Activity Indicator
 
+What's new in version 1.1 :
+
+- new icons
+- new menu for icon
+- closing files window now won't close the app
+- developer id signed, its a trusted app now
+
 MacOS Activity Indicator
 
 Do you have a super silent MacBook and sometimes you have no idea whether it is working or not? 

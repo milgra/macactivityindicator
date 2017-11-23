@@ -12,9 +12,11 @@
 		336F747B1E07EC92009BCC1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F747A1E07EC92009BCC1B /* main.m */; };
 		336F747D1E07EC92009BCC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F747C1E07EC92009BCC1B /* Assets.xcassets */; };
 		336F74801E07EC92009BCC1B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336F747E1E07EC92009BCC1B /* MainMenu.xib */; };
-		336F748B1E07ECA4009BCC1B /* switchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74871E07ECA4009BCC1B /* switchIcon.png */; };
-		336F748C1E07ECA4009BCC1B /* switchIconinv.png in Resources */ = {isa = PBXBuildFile; fileRef = 336F74881E07ECA4009BCC1B /* switchIconinv.png */; };
 		336F74911E07ECB8009BCC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F74901E07ECB8009BCC1B /* AppDelegate.m */; };
+		33E522051FC6180F004927FE /* iconlit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E522011FC6180F004927FE /* iconlit@2x.png */; };
+		33E522061FC6180F004927FE /* icondim.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E522021FC6180F004927FE /* icondim.png */; };
+		33E522071FC6180F004927FE /* icondim@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E522031FC6180F004927FE /* icondim@2x.png */; };
+		33E522081FC6180F004927FE /* iconlit.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E522041FC6180F004927FE /* iconlit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +27,12 @@
 		336F747C1E07EC92009BCC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		336F747F1E07EC92009BCC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		336F74811E07EC92009BCC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		336F74871E07ECA4009BCC1B /* switchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIcon.png; sourceTree = "<group>"; };
-		336F74881E07ECA4009BCC1B /* switchIconinv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIconinv.png; sourceTree = "<group>"; };
 		336F748F1E07ECB8009BCC1B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		336F74901E07ECB8009BCC1B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		33E522011FC6180F004927FE /* iconlit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconlit@2x.png"; sourceTree = "<group>"; };
+		33E522021FC6180F004927FE /* icondim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icondim.png; sourceTree = "<group>"; };
+		33E522031FC6180F004927FE /* icondim@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icondim@2x.png"; sourceTree = "<group>"; };
+		33E522041FC6180F004927FE /* iconlit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconlit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +65,8 @@
 		336F74751E07EC92009BCC1B /* MacOS Activity Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				336F74871E07ECA4009BCC1B /* switchIcon.png */,
-				336F74881E07ECA4009BCC1B /* switchIconinv.png */,
 				336F748F1E07ECB8009BCC1B /* AppDelegate.h */,
 				336F74901E07ECB8009BCC1B /* AppDelegate.m */,
-				336F747C1E07EC92009BCC1B /* Assets.xcassets */,
-				336F747E1E07EC92009BCC1B /* MainMenu.xib */,
-				336F74811E07EC92009BCC1B /* Info.plist */,
 				336F74791E07EC92009BCC1B /* Supporting Files */,
 			);
 			path = "MacOS Activity Indicator";
@@ -76,6 +75,13 @@
 		336F74791E07EC92009BCC1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33E522021FC6180F004927FE /* icondim.png */,
+				33E522031FC6180F004927FE /* icondim@2x.png */,
+				33E522041FC6180F004927FE /* iconlit.png */,
+				33E522011FC6180F004927FE /* iconlit@2x.png */,
+				336F747C1E07EC92009BCC1B /* Assets.xcassets */,
+				336F747E1E07EC92009BCC1B /* MainMenu.xib */,
+				336F74811E07EC92009BCC1B /* Info.plist */,
 				3319A9EC1E085437005DB79C /* LICENSE */,
 				3319A9ED1E085437005DB79C /* README.md */,
 				336F747A1E07EC92009BCC1B /* main.m */,
@@ -114,6 +120,7 @@
 				TargetAttributes = {
 					336F74721E07EC92009BCC1B = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = KAX983KY52;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -146,11 +153,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				336F748C1E07ECA4009BCC1B /* switchIconinv.png in Resources */,
+				33E522081FC6180F004927FE /* iconlit.png in Resources */,
 				336F747D1E07EC92009BCC1B /* Assets.xcassets in Resources */,
+				33E522051FC6180F004927FE /* iconlit@2x.png in Resources */,
 				3319A9EE1E085437005DB79C /* LICENSE in Resources */,
-				336F748B1E07ECA4009BCC1B /* switchIcon.png in Resources */,
 				336F74801E07EC92009BCC1B /* MainMenu.xib in Resources */,
+				33E522071FC6180F004927FE /* icondim@2x.png in Resources */,
+				33E522061FC6180F004927FE /* icondim.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +282,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KAX983KY52;
 				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -289,9 +298,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KAX983KY52;
 				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;

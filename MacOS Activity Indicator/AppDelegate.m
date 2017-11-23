@@ -47,11 +47,19 @@
         flag = 0;
         isLit = NO;
 
+        NSMenu *menu = [ [ NSMenu alloc ] init ];
+
+        [ menu addItemWithTitle : @"Show Changes" action : @selector(show) keyEquivalent : @"" ];
+        [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
+        [ menu addItemWithTitle : @"Donate if you like the app" action : @selector(support) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : @"Check for updates" action : @selector(update) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : @"Quit" action : @selector(terminate) keyEquivalent : @"" ];
+
         statusItem = [ [ [ NSStatusBar systemStatusBar ] statusItemWithLength : NSVariableStatusItemLength ] retain ];
         [statusItem setHighlightMode : NO ];
         [statusItem setToolTip : @"MacOS File Activity Indicator" ];
-        [statusItem setAction : @selector(itemClicked:) ];
         [statusItem setImage : [NSImage imageNamed:@"switchIcon.png"] ];
+        [statusItem setMenu: menu ];
         [statusItem.image setTemplate:NO];
         
         callbackCtx.version			= 0;
@@ -86,7 +94,7 @@
             if ( isLit && [lastLog timeIntervalSinceNow] < -1.0 )
             {
                 isLit = NO;
-                imageName = @"switchIconinv.png";
+                imageName = @"iconlit";
                 [self performSelectorOnMainThread:@selector(setImage) withObject:nil waitUntilDone:NO];
             }
         }];
@@ -111,7 +119,7 @@
         if ( !isLit )
         {
             isLit = YES;
-            imageName = @"switchIcon.png";
+            imageName = @"icondim";
             [self performSelectorOnMainThread:@selector(setImage) withObject:nil waitUntilDone:NO];
         }
     }
@@ -128,13 +136,7 @@
         scrollview = nil;
     }
 
-    - ( BOOL ) windowShouldClose:(id)sender
-    {
-        [ NSApp terminate : nil ];
-        return YES;
-    }
-
-    - (void)itemClicked:(id)sender
+    - (void)show
     {
         if ( window == nil )
         {
@@ -202,6 +204,21 @@
             [ scrollview setDocumentView : nil ];
             [ window close ];
         }
+    }
+
+    - ( void ) terminate
+    {
+        [ NSApp terminate : nil ];
+    }
+
+    - ( void ) support
+    {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: @"https://paypal.me/milgra"]];
+    }
+
+    - ( void ) update
+    {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: @"http://milgra.com/macos-activity-indicator.html"]];
     }
 
     @end
