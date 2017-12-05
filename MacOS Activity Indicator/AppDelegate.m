@@ -13,6 +13,7 @@
         NSString* imageName;
         NSDate* lastLog;
         BOOL isLit;
+        BOOL newLog;
     }
 
     @end
@@ -47,10 +48,21 @@
         flag = 0;
         isLit = NO;
 
+        // Version string
+        NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
+        NSString *versionString = [NSString stringWithFormat:@"Version %@ (build %@)",
+                                   bundleInfo[@"CFBundleShortVersionString"],
+                                   bundleInfo[@"CFBundleVersion"]
+                                   ];
+        
         NSMenu *menu = [ [ NSMenu alloc ] init ];
 
         [ menu addItemWithTitle : @"Show Changes" action : @selector(show) keyEquivalent : @"" ];
+
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
+        [ menu addItemWithTitle : versionString action : nil keyEquivalent : @"" ];
+        [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
+
         [ menu addItemWithTitle : @"Donate if you like the app" action : @selector(support) keyEquivalent : @"" ];
         [ menu addItemWithTitle : @"Check for updates" action : @selector(update) keyEquivalent : @"" ];
         [ menu addItemWithTitle : @"Quit" action : @selector(terminate) keyEquivalent : @"" ];
@@ -89,12 +101,14 @@
                         format:@"Failed to create event stream."];
         }
         
-        [ NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(NSTimer* timer)
+        [ NSTimer scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer* timer)
         {
-            if ( isLit && [lastLog timeIntervalSinceNow] < -1.0 )
+            if ( newLog )
             {
-                isLit = NO;
-                imageName = @"iconlit";
+                newLog = NO;
+                isLit = !isLit;
+                if ( isLit ) imageName = @"iconlit";
+                else imageName = @"icondim";
                 [self performSelectorOnMainThread:@selector(setImage) withObject:nil waitUntilDone:NO];
             }
         }];
@@ -116,12 +130,7 @@
         [ lastLog release ];
         lastLog = [ [ NSDate alloc ] init ];
         
-        if ( !isLit )
-        {
-            isLit = YES;
-            imageName = @"icondim";
-            [self performSelectorOnMainThread:@selector(setImage) withObject:nil waitUntilDone:NO];
-        }
+        newLog = YES;
     }
 
     - ( void ) setImage
