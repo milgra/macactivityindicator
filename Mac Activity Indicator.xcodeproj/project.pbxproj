@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		3319A9EC1E085437005DB79C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3319A9ED1E085437005DB79C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		336F74731E07EC92009BCC1B /* MacOS Activity Indicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacOS Activity Indicator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		336F74731E07EC92009BCC1B /* Mac Activity Indicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac Activity Indicator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		336F747A1E07EC92009BCC1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		336F747C1E07EC92009BCC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		336F747F1E07EC92009BCC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		336F746A1E07EC92009BCC1B = {
 			isa = PBXGroup;
 			children = (
-				336F74751E07EC92009BCC1B /* MacOS Activity Indicator */,
+				336F74751E07EC92009BCC1B /* Mac Activity Indicator */,
 				336F74741E07EC92009BCC1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,19 +57,19 @@
 		336F74741E07EC92009BCC1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				336F74731E07EC92009BCC1B /* MacOS Activity Indicator.app */,
+				336F74731E07EC92009BCC1B /* Mac Activity Indicator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		336F74751E07EC92009BCC1B /* MacOS Activity Indicator */ = {
+		336F74751E07EC92009BCC1B /* Mac Activity Indicator */ = {
 			isa = PBXGroup;
 			children = (
 				336F748F1E07ECB8009BCC1B /* AppDelegate.h */,
 				336F74901E07ECB8009BCC1B /* AppDelegate.m */,
 				336F74791E07EC92009BCC1B /* Supporting Files */,
 			);
-			path = "MacOS Activity Indicator";
+			path = "Mac Activity Indicator";
 			sourceTree = "<group>";
 		};
 		336F74791E07EC92009BCC1B /* Supporting Files */ = {
@@ -92,9 +92,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		336F74721E07EC92009BCC1B /* MacOS Activity Indicator */ = {
+		336F74721E07EC92009BCC1B /* Mac Activity Indicator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 336F74841E07EC92009BCC1B /* Build configuration list for PBXNativeTarget "MacOS Activity Indicator" */;
+			buildConfigurationList = 336F74841E07EC92009BCC1B /* Build configuration list for PBXNativeTarget "Mac Activity Indicator" */;
 			buildPhases = (
 				336F746F1E07EC92009BCC1B /* Sources */,
 				336F74701E07EC92009BCC1B /* Frameworks */,
@@ -104,9 +104,9 @@
 			);
 			dependencies = (
 			);
-			name = "MacOS Activity Indicator";
+			name = "Mac Activity Indicator";
 			productName = "MacOS Activity Indicator";
-			productReference = 336F74731E07EC92009BCC1B /* MacOS Activity Indicator.app */;
+			productReference = 336F74731E07EC92009BCC1B /* Mac Activity Indicator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 336F746E1E07EC92009BCC1B /* Build configuration list for PBXProject "MacOS Activity Indicator" */;
+			buildConfigurationList = 336F746E1E07EC92009BCC1B /* Build configuration list for PBXProject "Mac Activity Indicator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -143,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				336F74721E07EC92009BCC1B /* MacOS Activity Indicator */,
+				336F74721E07EC92009BCC1B /* Mac Activity Indicator */,
 			);
 		};
 /* End PBXProject section */
@@ -285,7 +285,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KAX983KY52;
-				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
+				INFOPLIST_FILE = "Mac Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.milgra.activityindicator;
@@ -301,7 +301,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KAX983KY52;
-				INFOPLIST_FILE = "MacOS Activity Indicator/Info.plist";
+				INFOPLIST_FILE = "Mac Activity Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.milgra.activityindicator;
@@ -312,7 +312,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		336F746E1E07EC92009BCC1B /* Build configuration list for PBXProject "MacOS Activity Indicator" */ = {
+		336F746E1E07EC92009BCC1B /* Build configuration list for PBXProject "Mac Activity Indicator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				336F74821E07EC92009BCC1B /* Debug */,
@@ -321,7 +321,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		336F74841E07EC92009BCC1B /* Build configuration list for PBXNativeTarget "MacOS Activity Indicator" */ = {
+		336F74841E07EC92009BCC1B /* Build configuration list for PBXNativeTarget "Mac Activity Indicator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				336F74851E07EC92009BCC1B /* Debug */,
